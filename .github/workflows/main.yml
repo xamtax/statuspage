@@ -4,46 +4,15 @@ name: Scheduled Health Check
 on:
   schedule:
     - cron: "30 * * * *"
-#  push:
-#    branches:
-#      - main
   workflow_dispatch:
 
 jobs:
   health_check_job:
     runs-on: ubuntu-latest
     name: Check all sites
-    permissions:
-      contents: read
-      issues: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.6
-
-#      - name: Use secrets
-#        run: ${{ secrets }}
-#
-#      - name: Use github
-#        run: ${{ github }}
-
-      - name: Use printenv
-        run: printenv
-
-      - name: Use the output 3
-        run: echo ${{ secrets.GH_APP_USERNAME }}
-
-      - name: Use the output
-        env:
-          API_NAME: ${{ secrets.GH_APP_USERNAME }}
-          API_NAME2: ${{ github.GH_APP_USERNAME }}
-        run: |
-          echo "The API key is $API_NAME"
-          echo "The API key is $API_NAME2"
-          echo "::notice::This is a notice"
-          echo "::warning::This is a warning"
-          echo "::error::This is an error"
-          echo "The output is secrets:  ${{ secrets.GH_APP_USERNAME }} ${{ secrets.GH_APP_EMAIL }} ${{ secrets.GH_TELEGRAM_WEBHOOK }}"
-          echo "The output is github.repository:  ${{ github.repository }}"
 
       - name: Run Shell Script
         id: shell_script_run

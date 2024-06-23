@@ -2,8 +2,6 @@ USER_NAME=$1
 USER_EMAIL=$2
 TELEGRAM_WEBHOOK=$3
 
-echo "CODE output : ${USER_NAME} -- ${USER_EMAIL} -- ${TELEGRAM_WEBHOOK}"
-
 commit=true
 origin=$(git remote get-url origin)
 
