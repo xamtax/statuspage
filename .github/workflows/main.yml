@@ -16,4 +16,4 @@ jobs:
 
       - name: Run Shell Script
         id: shell_script_run
-        run: bash ./health-check.sh ${{ secrets.GH_APP_USERNAME }} ${{ secrets.GH_APP_EMAIL }} ${{ secrets.GH_TELEGRAM_WEBHOOK }}
+        run: bash ./health-check.sh ${{ secrets.GH_APP_USERNAME }} ${{ secrets.GH_APP_EMAIL }} ${{ secrets.GH_TELEGRAM_API_KEY }}
