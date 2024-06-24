@@ -40,7 +40,7 @@ do
       result="success"
     else
       result="failed"
-      response=$(curl --location --request POST "https://api.telegram.org/bot${TELEGRAM_API_KEY}/sendMessage?chat_id=-1002249059855&text=%F0%9F%9A%A8%20%2A%24%7Bkey%7D%2A%20is%20currently%20down%20%7C%20https%3A%2F%2Fxamtax.github.io%2Fstatuspage%2F" \
+      response=$(curl --location --request POST "https://api.telegram.org/bot${TELEGRAM_API_KEY}/sendMessage?chat_id=-1002249059855&text=${key}%20is%20currently%20down%20%7C%20https%3A%2F%2Fxamtax.github.io%2Fstatuspage%2F" \
                  --header 'Content-Type: application/json' \
                  --silent --output /dev/null $url)
     fi
